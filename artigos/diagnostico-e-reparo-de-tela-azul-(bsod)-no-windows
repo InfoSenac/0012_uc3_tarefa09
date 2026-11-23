@@ -1,0 +1,35 @@
+# Diagnóstico e Reparo de Tela Azul (BSOD) no Windows
+
+- **Autor(a):** Douglas Henrique de Brito
+- **Categoria:**  Sistema Operacional 
+
+> **Alerta de Segurança:** Realize o backup dos arquivos importantes antes de executar comandode reaparo no disco ou alterar configurações do sistema, evitando perda de dados caso o sistema não reinicie corretamente.
+
+## 1. Sintoma e Diagnóstico Inicial
+
+Computador apresenta travamentos seguido de uma tela azul (BSOD- *Blue Screen of Death*) com códigos de paradas e renicialização automática. As causas mais prováveis incluem arquivos corrompidos do sistema, drivers imcompatíveis ou desatualizados e falhas nos módulos de memória RAM ou unidade de armazenamento.
+
+## 2. Ferramentas e Recursos Necessários
+
+- **Hardware / Bancada:** Não se aplica (procedimento lógico). *(Opicional: pendrive bootável com mídia de instalação caso o sistema não inicie).*
+- **Software / Utilitário:** Prompt de Comando (Admin), Visualizador de Eventos e Diagnóstico de Memória do Windows.
+
+## 3. Procedimento de Solução (Passo a Passo)
+
+1. Inicialize o Windows (ou entre no **Modo de Segurança** caso o erro ocorra logo na inicialização) e abra o **Prompt de Comando como Administrador**.
+2. Execute a verificação de integridade dos arquivos protegidos do sistema e da imagem do Windows utilizando os comandos abaixo (realize um de cada vez):
+
+    ```bash
+    sfc /scannow
+    DISM /Online/Cleanup-Image/RestoreHealth
+    ```
+
+3. Abra o **Gerenciador de Dispositivos**, verifique se há alertas em drivers (especialmente de placa de vídeo e chipset)e atualize ou reverta drivers instalados recentemente.
+4. Pressione `Win + R`, digite `mdsched.exe` e selecione **"Reiniciar agora e verificar se há problemas"** para testar a integridade da memória RAM.
+
+## 4. Checklist de Validação (Teste Final)
+
+- [ ] O sistema operacional inicializa e opera sem exibir erros de parada (BSOD) durante o uso contínuo e sob carga de aplicativos.
+- [ ] A ferramente SFC retorna a mensagem  *"A Proteção de Recursos do Windows não encontrou nenhuma violação de integridade"* e o teste de memória não aponta falhas de hardware.
+- [ ] O **Visualizador de Eventos** (Logs do Windows/Sistema) não registra novos eventos criticos do tipo *Kernel-Power* (ID 41) ou *BugCheck* (ID 1001) após os testes.
+- [ ] O **Gerenciador de Dispositivos** exibe todos os componentes de hardware instalados e operantes, sem ícones de alerta ou conflitos de drivers.
