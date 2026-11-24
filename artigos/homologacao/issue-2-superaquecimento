@@ -1,0 +1,35 @@
+#  Diagnóstico de Superaquecimento e Estrangulamento Térmico
+
+- **Autor(a):** Nikson Vinicius Matos da Silva
+- **Categoria:** Hardware
+
+> **Alerta de Segurança:** Evitar qualquer intervenção sem controle térmico e proteção física do hardware. Desligue o equipamento, desconecte o cabo de força da tomada e, em notebooks, desconecte o cabo da bateria da placa-mãe antes de tocar em qualquer componente.
+
+## 1. Sintoma e Diagnóstico Inicial
+
+O problema se manifesta pela perda repentina de desempenho acompanhada de calor e barulho excessivos, e a causa mais provável é o bloqueio do fluxo de ar por poeira somado ao ressecamento da pasta térmica.
+
+## 2. Ferramentas e Recursos Necessários
+
+- **Hardware / Bancada:** • Chave Phillips de precisão: Necessária para abrir o equipamento e remover o dissipador com segurança.
+• Pincel macio antiestático (ou ar comprimido): Fundamental para desobstruir a poeira das ventoinhas e aletas do dissipador.
+• Álcool isopropílico (99,8%) e pano sem fiapos: Indispensáveis para remover completamente a pasta térmica velha sem danificar ou oxidar os circuitos.
+• Pulseira antiestática (ESD): O item de proteção obrigatório para evitar queimar a placa-mãe ao manusear os componentes internos."
+- **Software / Utilitário:** Software de monitoramento (HWiNFO64 ou HWMonitor): Essencial para ver a temperatura real e confirmar se o clock está caindo (throttling) antes e depois do reparo.
+
+## 3. Procedimento de Solução (Passo a Passo)
+1. Primeiro passo: Desenergizar e proteger, Desligue o equipamento, desconecte o cabo de força e pressione o botão Power por 10 segundos.Coloque a pulseira antiestática, abra o equipamento e desconecte a bateria interna
+
+2. Segundo passo: Solte os parafusos do cooler/dissipador em padrão cruzado (X) com chave Phillips e remova o conjunto sem forçar.5.  Limpe as ventoinhas e aletas do dissipador com pincel antiestático ou ar comprimido, segurando as pás para não girarem livres limpe o chip e a base do dissipador usando álcool isopropílico (99,8%) e pano sem fiapos até remover todo resíduo.
+
+    ```bash
+    # Get-Counter '\Processor Information(_Total)\% Processor Performance' -Continuous
+    ```
+
+3. Terceiro passo: Aplicar Nova Pasta: Aplique uma gota  no centro do chip. Posicione o dissipador, aperte os parafusos gradualmente em X, reconecte a bateria e feche o gabinete. Ligue o equipamento, rode o mesmo teste de estresse por 10 minutos no HWiNFO64 e confirme temperaturas estáveis e clock máximo sem quedas.
+
+## 4. Checklist de Validação (Teste Final)
+
+- Estabilização térmica abaixo do limite operacional (TJ Max), mantendo a temperatura do processador/GPU em níveis seguros tanto em repouso (idle, entre 35 °C e 50 °C) quanto sob carga máxima (abaixo de 85 °C, sem acionar flags de alerta térmico nos sensores).
+- Manutenção contínua da frequência de operação (clock) e ausência de falhas sob estresse, garantindo que o chip sustente seu boost clock nominal por pelo menos 10 a 15 minutos de carga contínua sem quedas bruscas de MHz, engasgos (stuttering), telas azuis ou desligamentos repentinos.
+ 
