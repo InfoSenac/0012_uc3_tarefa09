@@ -60,4 +60,4 @@ O computador apresenta lentidão durante a inicialização, demorando para chega
     []O disco não apresenta alertas críticos de saúde ou erros de sistema de arquivos pendentes.
     []O computador permanece estável após pelo menos duas reinicializações consecutivas.
 
->**Resultado esperado:** Redução do tempo de inicialização, menor consumo de recursos durante o boot e funcionamento estável do sistema operacional.
+## Resultado esperado: Redução do tempo de inicialização, menor consumo de recursos durante o boot e funcionamento estável do sistema operacional.
