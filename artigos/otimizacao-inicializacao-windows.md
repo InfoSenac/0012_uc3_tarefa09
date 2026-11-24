@@ -39,8 +39,7 @@ O computador apresenta lentidão durante a inicialização, demorando para chega
     Observe também a temperatura e os indicadores SMART.
     No Gerenciador de Tarefas, acesse a aba Desempenho e selecione Disco para verificar a utilização durante a inicialização.
     Para uma verificação lógica do sistema de arquivos, abra o Prompt de Comando como administrador e execute:
->bash ``chkdsk C: /scan`` 
-    Esse comando verifica o sistema de arquivos sem exigir uma verificação offline programada. Ele não substitui o diagnóstico SMART nem comprova a saúde física do disco.
+>**bash** ``chkdsk C: /scan`` Esse comando verifica o sistema de arquivos sem exigir uma verificação offline programada. Ele não substitui o diagnóstico SMART nem comprova a saúde física do disco.
 4. **Comparar o desempenho após os ajustes**
     Reinicie o computador após as alterações.
     Observe o tempo necessário para chegar à área de trabalho.
