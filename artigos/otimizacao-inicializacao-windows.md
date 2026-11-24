@@ -35,14 +35,15 @@ O computador apresenta lentidão durante a inicialização, demorando para chega
     Caso ocorra algum problema, retorne ao msconfig e restaure as configurações anteriores.
 
 3. **Verificar a saúde e a integridade do disco**
-    Abra o CrystalDiskInfo, caso esteja disponível.
+
+    - Abra o CrystalDiskInfo, caso esteja disponível.
     - Verifique o estado de saúde do SSD ou HD:
         - Bom: sem alertas críticos identificados.
         - Alerta: existem parâmetros que exigem atenção.
         - Ruim: há indicação de falha ou risco de perda de dados.
-    Observe também a temperatura e os indicadores SMART.
-    No Gerenciador de Tarefas, acesse a aba Desempenho e selecione Disco para verificar a utilização durante a inicialização.
-    Para uma verificação lógica do sistema de arquivos, abra o Prompt de Comando como administrador e execute:
+    - Observe também a temperatura e os indicadores SMART.
+    - No Gerenciador de Tarefas, acesse a aba Desempenho e selecione Disco para verificar a utilização durante a inicialização.
+    - Para uma verificação lógica do sistema de arquivos, abra o Prompt de Comando como administrador e execute:
 
 >**bash** ``chkdsk C: /scan`` Esse comando verifica o sistema de arquivos sem exigir uma verificação offline programada. Ele não substitui o diagnóstico SMART nem comprova a saúde física do disco.
 
