@@ -1,4 +1,4 @@
-# [Título Técnico do Diagnóstico ou Reparo]
+# Verificação de Integridade do Sistema de Arquivos com CHKDSK
 
 - **Autor(a):** Matheus Santana
 - **Categoria:** Sistema Operacional / Armazenamento
