@@ -1,31 +1,35 @@
-# [Título Técnico do Diagnóstico ou Reparo]
+# Dagnóstico de Superaquecimento e Throttling
 
-- **Autor(a):** [Seu Nome Completo]
-- **Categoria:** [Hardware / BIOS-UEFI / Sistema Operacional / Armazenamento]
+- **Autor(a):** Amanda
+- **Categoria:** Hardware
 
-> **Alerta de Segurança:** [Descreva o cuidado técnico obrigatório: ex. desconectar da rede elétrica, usar pulseira ESD ou realizar backup antes de alterar partições/registro.]
+> **Alerta de Segurança:** Desligue o computador da tomada, espere e use pulseira ESD antes de abrir. Nunca abra a fonte e nunca use aspirador para limpar o interior.
 
 ## 1. Sintoma e Diagnóstico Inicial
 
-Explique em 2 ou 3 linhas como o problema se manifesta para o usuário e qual é a causa mais provável.
+O computador fica lento do nada, trava em jogos ou programas pesados, desliga sozinho e o cooler faz muito barulho. Isso acontece porque quando a temperatura sobe demais, o processador diminui a velocidade sozinho para não queimar. Isso se chama thorottling.
 
 ## 2. Ferramentas e Recursos Necessários
 
-- **Hardware / Bancada:** [Ex.: Multímetro, pulseira ESD, pendrive bootável ou "Não se aplica (procedimento lógico)"]
-- **Software / Utilitário:** [Ex.: Prompt de Comando (Admin), Gerenciador de Dispositivos, HWiNFO]
+- **Hardware / Bancada:** Chave Phillips, pincel macio, ar comprimido, pasta térmica nova, pulseira ESD, álcool isopropílico
+- **Software / Utilitário:** HWMonitor, HWiNFO, Gerenciador de tarefas
 
 ## 3. Procedimento de Solução (Passo a Passo)
 
-1. Primeiro passo objetivo.
-2. Segundo passo objetivo.
+1. Abra o HWMonitor ou o HWiNFO e anote a temperatura da CPUem repouso e depois com algum programa pesado aberto.
+2. Abra o Gerenciador de Tarefas com Ctrl + Shift + Esc e veja se a velocidade da CPU cai quando a temperatura sobe. Se cair, é thottling.
+3. Desligue o computador, tire da tomada e espere 10 minutos para esfriar.
+4. Abra o gabinete e limpe o pó dos coolers, do dissipador e das saídas de ar com pincel macio e ar comprimido, em um lugar ventilado.
+5. Se continuar quante, tire o cooler do processador, limpe a pasta térmica velha com álcool isopropílico e coloque uma gotinha de pasta nova no centro do processador.
+6. Remote o cooler, ligue o computador e deixe monitorando po 15 minutos.
 
     ```bash
-    # Insira aqui o comando de diagnóstico/reparo (apague este bloco se o procedimento for 100% visual)
+   vwic /namespace:\\root\wmi PATH MSAcpi_ThermalZoneTemperature get CurrentTemperature
     ```
 
-3. Terceiro passo objetivo.
 
 ## 4. Checklist de Validação (Teste Final)
 
-- [ ] Critério técnico 1 que comprova o funcionamento normal
-- [ ] Critério técnico 2 que comprova a estabilidade do sistema
+- [ ] Temperatura da CPU abaixo de 85°C em uso pesado por 15 minutos
+- [ ] Computador não trava, não desliga sozinho e mantém o desempenho
+- [ ] Cooler girando normal e sem barulho estranho
