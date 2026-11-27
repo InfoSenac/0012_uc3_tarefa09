@@ -1,4 +1,4 @@
-Diagnóstico de Superaquecimento e Throttling Térmico
+# Diagnóstico de Superaquecimento e Throttling Térmico
 
 Autor(a): luciano martins gomes
 Categoria: Hardware 
